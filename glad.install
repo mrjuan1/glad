@@ -1,0 +1,9 @@
+post_install() {
+	mv /usr/bin/glad-genlib.sh /usr/sbin
+	glad-genlib.sh
+}
+
+pre_remove() {
+	glad-genlib.sh --remove
+	rm -fv /usr/sbin/glad-genlib.sh
+}
